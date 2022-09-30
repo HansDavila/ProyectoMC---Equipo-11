@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">MedioCurso</string>
+    <string name="msj_bienvenida">Bienvenido</string>
+    <string name="msj_Registro">Ingresa tus datos</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Telefono">Telefono</string>
+    <string name="Empresa">Empresa</string>
+    <string name="id_Empleado">Id Empleado</string>
+    <string name="puesto">Administrador</string>
+    <string name="usuario">Usuario</string>
+    <string name="correo">Correo</string>
+    <string name="Crear">Crear Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_registrar">Registrar</string>
+
+
+    <string name="Nombre_empleado">Nombre: %1$s</string>
+    <string name="correo_empleado">Correo: %1$s</string>
+    <string name="Id_empleado">Id Empleado: %1$s</string>
+    <string name="empresa_empleado">Empresa: %1$s</string>
+    <string name="Telefono_empleado">Telefono: %1$s</string>
+    <string name="Puesto_empleado">Puesto: %1$s</string>
+
+    <string name="btn_codigo">Generar codigo QR</string>
+    <string name="btn_modificar">Modificar datos</string>
+
+    <string name="Id_admin">Id Admin: %1$s</string>
+    <string name="btn_codigoAdmin">Escanear codigo QR</string>
+
+    <string name="modificaText">Modifica tus datos</string>
+
+
 </resources>

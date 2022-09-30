@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "343559126982",
+    "project_id": "proyectomc-equipo11",
+    "storage_bucket": "proyectomc-equipo11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343559126982:android:7de8ae3816ec4c9d543cc7",
+        "android_client_info": {
+          "package_name": "com.example.mediocurso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343559126982-j2jdr8b771r4gtsblcj54n236egbvc2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-lKUXmxT0bPccsTJcSVwCURKDE0oefF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343559126982-j2jdr8b771r4gtsblcj54n236egbvc2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
