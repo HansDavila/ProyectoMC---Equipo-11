@@ -6,73 +6,147 @@
     android:layout_height="match_parent"
     tools:context=".ActivityEmpleado">
 
+
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/correoTv"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="Nombre: Hans Ricardo Davila Acuña"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="17dp"
+
+
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867"
-        tools:text="Nombre: " />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/correoTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="576dp"
+        android:layout_marginTop="40dp"
+
+        android:fontFamily="@font/roboto_mono"
         android:hint="Correo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="17dp"
+
+
+        android:textStyle="bold"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <TextView
         android:id="@+id/idEmpleado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Id Empleado"
+        android:layout_marginTop="32dp"
+        android:hint="Id Empleado: 1909603"
+        android:fontFamily="@font/roboto_mono"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="17dp"
+        android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correoTv" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Empresa"
+        android:layout_marginTop="296dp"
+        android:fontFamily="@font/roboto_mono"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Empresa"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textSize="17dp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
         app:layout_constraintTop_toBottomOf="@+id/idEmpleado" />
 
     <TextView
         android:id="@+id/telefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Telefono"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto_mono"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Telefono"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="17dp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
         app:layout_constraintTop_toBottomOf="@+id/empresa" />
 
     <TextView
         android:id="@+id/puesto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="puesto"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/roboto_mono"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="puesto"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textSize="17dp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="@id/tvName"
         app:layout_constraintTop_toBottomOf="@+id/telefono" />
+
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/idEmpleado"
+        app:layout_constraintVertical_bias="0.551"
+        tools:srcCompat="@drawable/profile__medium"
+        android:src="@drawable/profile__medium"/>
+
+    <Button
+        android:id="@+id/btn_codigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/roboto_mono"
+        android:text="@string/btn_codigo"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/puesto" />
+
+    <Button
+        android:id="@+id/btn_modificar"
+        Of="@+id/parent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/roboto_mono"
+        android:text="@string/btn_modificar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_codigo"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/btn_codigo"
+        app:layout_constraintTop_toBottomOf="@+id/btn_codigo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

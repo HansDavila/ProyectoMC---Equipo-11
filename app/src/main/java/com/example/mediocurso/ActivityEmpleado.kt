@@ -42,12 +42,20 @@ class ActivityEmpleado : AppCompatActivity() {
 
             val user = documents.first()
 
-            binding.tvName.text =  user.get(CAMPO_NOMBRE).toString()
+            binding.tvName.setText(getString(R.string.Nombre_empleado, user.get(CAMPO_NOMBRE).toString()))
+            binding.correoTv.setText(getString(R.string.correo_empleado, user.get(CAMPO_CORREO).toString()))
+            binding.telefono.setText(getString(R.string.correo_empleado, user.get(CAMPO_TELEFONO).toString()))
+            binding.empresa.setText(getString(R.string.empresa_empleado, user.get(CAMPO_EMPRESA).toString()))
+            binding.idEmpleado.setText(getString(R.string.Id_empleado, user.id))
+            binding.puesto.setText(getString(R.string.Puesto_empleado, user.get(CAMPO_PUESTO).toString()))
+
+
+            /*
             binding.correoTv.text =  user.get(CAMPO_CORREO).toString()
             binding.telefono.text =  user.get(CAMPO_TELEFONO).toString()
             binding.empresa.text =  user.get(CAMPO_EMPRESA).toString()
             binding.puesto.text =  user.get(CAMPO_PUESTO).toString()
-            binding.idEmpleado.text = user.id
+            binding.idEmpleado.text = user.id*/
         }
 
     }

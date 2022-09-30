@@ -15,4 +15,17 @@
     <string name="btn_registrar">Registrar</string>
 
 
+    <string name="Nombre_empleado">Nombre: %1$s</string>
+    <string name="correo_empleado">Correo: %1$s</string>
+    <string name="Id_empleado">Id Empleado: %1$s</string>
+    <string name="empresa_empleado">Empresa: %1$s</string>
+    <string name="Telefono_empleado">Telefono: %1$s</string>
+    <string name="Puesto_empleado">Puesto: %1$s</string>
+
+    <string name="btn_codigo">Generar codigo QR</string>
+    <string name="btn_modificar">Modificar datos</string>
+
+
+
+
 </resources>
