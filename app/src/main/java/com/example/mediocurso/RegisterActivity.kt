@@ -1,5 +1,6 @@
 package com.example.mediocurso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -60,6 +61,9 @@ class RegisterActivity : AppCompatActivity() {
 
                         var toast = Toast.makeText(this, "USUARIO ${binding.tvNombre.text.toString()} GENERADO EXITOSAMENTE", Toast.LENGTH_SHORT).show()
 
+
+                        showEmpleado(binding.tvCorreo.text.toString(), puesto)
+
                     }else{
                         var toast = Toast.makeText(this, "INGRESE TODOS LOS DATOS", Toast.LENGTH_SHORT).show()
                     }
@@ -67,4 +71,18 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+
+
+    private fun showEmpleado(email: String, puesto:String ){
+
+        if(puesto.equals("empleado")){
+            val EmpleadoIntent = Intent(this, ActivityEmpleado::class.java).apply {
+                putExtra(CAMPO_CORREO,email)
+            }
+            startActivity(EmpleadoIntent)
+        }
+
+    }
+
+
 }

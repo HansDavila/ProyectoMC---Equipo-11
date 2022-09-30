@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ActivityEmpleado">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola Empleado"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="306dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

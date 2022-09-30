@@ -22,10 +22,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            //setup
-            setup()
+
         }
 
+
+        //setup
+        setup()
 
     }
 
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                     binding.tvPassword.text.toString()).addOnCompleteListener{
 
                     if(it.isSuccessful){
-
+                        var toast = Toast.makeText(this, "ACCESO CONCEDIDO", Toast.LENGTH_SHORT).show()
                     }else{
                         var toast = Toast.makeText(this, "ERROR AL INICIAR SESION CON USUARIO", Toast.LENGTH_SHORT).show()
                     }
