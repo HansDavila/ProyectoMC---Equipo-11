@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">MedioCurso</string>
     <string name="msj_bienvenida">Bienvenido</string>
+    <string name="msj_Registro">Ingresa tus datos</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Telefono">Telefono</string>
+    <string name="Empresa">Empresa</string>
+    <string name="id_Empleado">Id Empleado</string>
+    <string name="puesto">Administrador</string>
     <string name="usuario">Usuario</string>
+    <string name="correo">Correo</string>
+    <string name="Crear">Crear Usuario</string>
     <string name="contraseña">Contraseña</string>
     <string name="btn_login">Login</string>
     <string name="btn_registrar">Registrar</string>
+
 
 </resources>
