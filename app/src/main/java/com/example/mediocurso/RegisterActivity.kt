@@ -3,10 +3,14 @@ package com.example.mediocurso
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Display
+import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import com.example.mediocurso.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var  binding: ActivityRegisterBinding
@@ -22,12 +26,28 @@ class RegisterActivity : AppCompatActivity() {
         val CAMPO_PUESTO = "puesto empresa"
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
+        binding.btnRegistrar.setOnClickListener {
+
+            var toast = Toast.makeText(this, "Datos guardados correctamente", Toast.LENGTH_SHORT).show()
+            Thread.sleep(1000)
+            val intentMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(intentMainActivity)
+        }
+
+        binding.btnCerrar.setOnClickListener()
+        {
+            val intentMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(intentMainActivity)
+        }
+
+        /*
         binding.btnRegistrar.setOnClickListener{
             if (binding.tvNombre.text.isNotEmpty() && binding.tvIdEmpleado.text.isNotEmpty() && binding.tvPassword.text.isNotEmpty() && binding.tvEmpresa.text.isNotEmpty() && binding.tvEmpresa.text.isNotEmpty()
                 && binding.tvCorreo.text.isNotEmpty()){
@@ -69,25 +89,25 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
             }
-        }
-    }
-
-
-    private fun showEmpleado(email: String, puesto:String ){
-
-        if(puesto.equals("empleado")){
-            val EmpleadoIntent = Intent(this, ActivityEmpleado::class.java).apply {
-                putExtra(CAMPO_CORREO,email)
-            }
-            startActivity(EmpleadoIntent)
-        }else if(puesto.equals("admin")){
-            val AdminIntent = Intent(this, ActivityAdmin::class.java).apply {
-                putExtra(CAMPO_CORREO,email)
-            }
-            startActivity(AdminIntent)
-        }
+        } */
 
     }
 
+
+        private fun showEmpleado(email: String, puesto: String) {
+
+            if (puesto.equals("empleado")) {
+                val EmpleadoIntent = Intent(this, ActivityEmpleado::class.java).apply {
+                    putExtra(CAMPO_CORREO, email)
+                }
+                startActivity(EmpleadoIntent)
+            } else if (puesto.equals("admin")) {
+                val AdminIntent = Intent(this, ActivityAdmin::class.java).apply {
+                    putExtra(CAMPO_CORREO, email)
+                }
+                startActivity(AdminIntent)
+            }
+
+        }
 
 }

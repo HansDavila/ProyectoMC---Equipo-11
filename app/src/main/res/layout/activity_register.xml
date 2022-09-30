@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+
     <TextView
         android:id="@+id/tvBienvenida"
         android:layout_width="wrap_content"
@@ -18,8 +19,7 @@
         app:layout_constraintEnd_toEndOf="@id/tvIdEmpleado"
         app:layout_constraintStart_toStartOf="@id/tvIdEmpleado"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
-
+        app:layout_constraintVertical_bias="0.086" />
 
     <EditText
         android:id="@+id/tvIdEmpleado"
@@ -140,5 +140,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch_puesto" />
+
+    <Button
+        android:id="@+id/btnCerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="149dp"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_registrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

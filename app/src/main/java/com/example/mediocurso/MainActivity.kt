@@ -3,18 +3,21 @@ package com.example.mediocurso
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import com.example.mediocurso.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
-    val db : FirebaseFirestore = FirebaseFirestore.getInstance()
+    val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    companion object{
+    companion object {
         val NOMBRE_TABLA = "users"
         val CAMPO_CORREO = "correo"
         val CAMPO_NOMBRE = "nombre"
@@ -28,36 +31,57 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnRegistrar.setOnClickListener{
+        binding.btnRegistrar.setOnClickListener {
             val intentRegisterActivity = Intent(this, RegisterActivity::class.java)
             startActivity(intentRegisterActivity)
 
 
-
-
         }
 
+        binding.btnLogin.setOnClickListener()
+        {
+            if(binding.tvEmail.text.toString() == "Empleado" && binding.tvPassword.text.toString() == "1234")
+            {
+                val intentEmpleadoActivity = Intent(this, ActivityEmpleado::class.java)
+                startActivity(intentEmpleadoActivity)
+            }
+            else if (binding.tvEmail.text.toString() == "Admin" && binding.tvPassword.text.toString() == "4321")
+            {
+                val intentAdminActivity = Intent(this, ActivityAdmin::class.java)
+                startActivity(intentAdminActivity)
+            }
+            else
+            {
+                var toast = Toast.makeText(this, "ACCESO DENEGADO", Toast.LENGTH_SHORT).show()
+            }
+        }
+        //setup()
 
-        //setup
-        setup()
 
     }
 
+} //Cierre de clase
+
+/*
     private fun setup() {
+        binding.btnLogin.setOnClickListener {
+            if (binding.tvEmail.text.isNotEmpty() && binding.tvPassword.text.isNotEmpty()) {
 
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    binding.tvEmail.text.toString(),
+                    binding.tvPassword.text.toString()
+                ).addOnCompleteListener {
 
-
-        binding.btnLogin.setOnClickListener{
-            if (binding.tvEmail.text.isNotEmpty() && binding.tvPassword.text.isNotEmpty()){
-
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(binding.tvEmail.text.toString(),
-                    binding.tvPassword.text.toString()).addOnCompleteListener{
-
-                    if(it.isSuccessful){
-                        var toast = Toast.makeText(this, "ACCESO CONCEDIDO", Toast.LENGTH_SHORT).show()
+                    if (it.isSuccessful) {
+                        var toast =
+                            Toast.makeText(this, "ACCESO CONCEDIDO", Toast.LENGTH_SHORT).show()
                         showEmpleado(binding.tvEmail.text.toString())
-                    }else{
-                        var toast = Toast.makeText(this, "ERROR AL INICIAR SESION CON USUARIO", Toast.LENGTH_SHORT).show()
+                    } else {
+                        var toast = Toast.makeText(
+                            this,
+                            "ERROR AL INICIAR SESION CON USUARIO",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
@@ -65,31 +89,37 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun showEmpleado(email: String){
+    private fun showEmpleado(email: String) {
 
         var puesto: String = ""
 
-        db.collection(RegisterActivity.NOMBRE_TABLA).whereEqualTo(RegisterActivity.CAMPO_CORREO,email).get().addOnSuccessListener { documents ->
+        db.collection(RegisterActivity.NOMBRE_TABLA)
+            .whereEqualTo(RegisterActivity.CAMPO_CORREO, email).get()
+            .addOnSuccessListener { documents ->
 
 
-            val user = documents.first()
-            puesto = user.get(CAMPO_PUESTO).toString()
+                val user = documents.first()
+                puesto = user.get(CAMPO_PUESTO).toString()
 
-            if(puesto.equals("empleado")){
-                val EmpleadoIntent = Intent(this, ActivityEmpleado::class.java).apply {
-                    putExtra(RegisterActivity.CAMPO_CORREO,email)
+                if (puesto.equals("empleado")) {
+                    val EmpleadoIntent = Intent(this, ActivityEmpleado::class.java).apply {
+                        putExtra(RegisterActivity.CAMPO_CORREO, email)
+                    }
+                    var toast = Toast.makeText(
+                        this,
+                        "ENTRADA DESDE DENTRO CON PUESTO: $puesto",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    startActivity(EmpleadoIntent)
+
+                } else if (puesto.equals("admin")) {
+                    val AdminIntent = Intent(this, ActivityAdmin::class.java).apply {
+                        putExtra(RegisterActivity.CAMPO_CORREO, email)
+                    }
+                    startActivity(AdminIntent)
                 }
-                var toast = Toast.makeText(this, "ENTRADA DESDE DENTRO CON PUESTO: $puesto", Toast.LENGTH_SHORT).show()
-                startActivity(EmpleadoIntent)
 
-            }else if(puesto.equals("admin")){
-                val AdminIntent = Intent(this, ActivityAdmin::class.java).apply {
-                    putExtra(RegisterActivity.CAMPO_CORREO,email)
-                }
-                startActivity(AdminIntent)
             }
-
-        }
-
     }
-}
+    }
+    */

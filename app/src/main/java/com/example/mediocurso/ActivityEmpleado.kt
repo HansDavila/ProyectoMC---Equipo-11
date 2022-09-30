@@ -10,9 +10,9 @@ import com.google.firebase.firestore.QuerySnapshot
 
 class ActivityEmpleado : AppCompatActivity() {
     lateinit var binding: ActivityEmpleadoBinding
-    val db : FirebaseFirestore = FirebaseFirestore.getInstance()
+    val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
-    companion object{
+    companion object {
         val NOMBRE_TABLA = "users"
         val CAMPO_CORREO = "correo"
         val CAMPO_NOMBRE = "nombre"
@@ -27,12 +27,23 @@ class ActivityEmpleado : AppCompatActivity() {
         binding = ActivityEmpleadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setup
-
         val bundle: Bundle? = intent.extras
         val email: String? = bundle?.getString(CAMPO_CORREO)
 
-        db.collection(NOMBRE_TABLA).whereEqualTo(CAMPO_CORREO,email).get().addOnSuccessListener { documents ->
+        binding.btnCerrar2.setOnClickListener()
+        {
+            val intentMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(intentMainActivity)
+        }
+
+        binding.btnEscanear.setOnClickListener()
+        {
+            val intentQrActivity = Intent(this, qrActivity::class.java)
+            startActivity(intentQrActivity)
+        }
+}
+/*
+       db.collection(NOMBRE_TABLA).whereEqualTo(CAMPO_CORREO,email).get().addOnSuccessListener { documents ->
             /*
             val users = mutableListOf<QueryDocumentSnapshot>()
             for(document in documents){
@@ -65,7 +76,7 @@ class ActivityEmpleado : AppCompatActivity() {
             */
 
         }
-
+*/
 
 
     }
@@ -81,5 +92,3 @@ class ActivityEmpleado : AppCompatActivity() {
 
     }
     */
-
-}
