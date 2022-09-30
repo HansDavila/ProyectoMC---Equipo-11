@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
             if (binding.tvNombre.text.isNotEmpty() && binding.tvIdEmpleado.text.isNotEmpty() && binding.tvPassword.text.isNotEmpty() && binding.tvEmpresa.text.isNotEmpty() && binding.tvEmpresa.text.isNotEmpty()
                 && binding.tvCorreo.text.isNotEmpty()){
 
-                var switchState = binding.switchPuesto.isActivated
+                var switchState = binding.switchPuesto.isChecked
 
 
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(binding.tvCorreo.text.toString(),     //crear auntenticador con datos de usuario
@@ -80,6 +80,11 @@ class RegisterActivity : AppCompatActivity() {
                 putExtra(CAMPO_CORREO,email)
             }
             startActivity(EmpleadoIntent)
+        }else if(puesto.equals("admin")){
+            val AdminIntent = Intent(this, ActivityAdmin::class.java).apply {
+                putExtra(CAMPO_CORREO,email)
+            }
+            startActivity(AdminIntent)
         }
 
     }

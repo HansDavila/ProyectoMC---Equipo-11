@@ -81,6 +81,12 @@ class MainActivity : AppCompatActivity() {
                 }
                 var toast = Toast.makeText(this, "ENTRADA DESDE DENTRO CON PUESTO: $puesto", Toast.LENGTH_SHORT).show()
                 startActivity(EmpleadoIntent)
+
+            }else if(puesto.equals("admin")){
+                val AdminIntent = Intent(this, ActivityAdmin::class.java).apply {
+                    putExtra(RegisterActivity.CAMPO_CORREO,email)
+                }
+                startActivity(AdminIntent)
             }
 
         }

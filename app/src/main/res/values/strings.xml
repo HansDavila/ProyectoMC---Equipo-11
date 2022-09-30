@@ -25,7 +25,8 @@
     <string name="btn_codigo">Generar codigo QR</string>
     <string name="btn_modificar">Modificar datos</string>
 
-
+    <string name="Id_admin">Id Admin: %1$s</string>
+    <string name="btn_codigoAdmin">Escanear codigo QR</string>
 
 
 </resources>
