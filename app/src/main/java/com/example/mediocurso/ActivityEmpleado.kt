@@ -32,12 +32,15 @@ class ActivityEmpleado : AppCompatActivity() {
         val email: String? = bundle?.getString(CAMPO_CORREO)
 
         db.collection(NOMBRE_TABLA).whereEqualTo(CAMPO_CORREO,email).get().addOnSuccessListener { documents ->
+            /*
             val users = mutableListOf<QueryDocumentSnapshot>()
             for(document in documents){
                 users.add(document)
             }
+            */
 
-            val user = users.first()
+
+            val user = documents.first()
 
             binding.tvName.text =  user.get(CAMPO_NOMBRE).toString()
             binding.correoTv.text =  user.get(CAMPO_CORREO).toString()
