@@ -1,5 +1,6 @@
 package com.example.mediocurso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mediocurso.databinding.ActivityEmpleadoBinding
@@ -44,7 +45,7 @@ class ActivityEmpleado : AppCompatActivity() {
 
             binding.tvName.setText(getString(R.string.Nombre_empleado, user.get(CAMPO_NOMBRE).toString()))
             binding.correoTv.setText(getString(R.string.correo_empleado, user.get(CAMPO_CORREO).toString()))
-            binding.telefono.setText(getString(R.string.correo_empleado, user.get(CAMPO_TELEFONO).toString()))
+            binding.telefono.setText(getString(R.string.Telefono_empleado, user.get(CAMPO_TELEFONO).toString()))
             binding.empresa.setText(getString(R.string.empresa_empleado, user.get(CAMPO_EMPRESA).toString()))
             binding.idEmpleado.setText(getString(R.string.Id_empleado, user.id))
             binding.puesto.setText(getString(R.string.Puesto_empleado, user.get(CAMPO_PUESTO).toString()))
@@ -56,7 +57,29 @@ class ActivityEmpleado : AppCompatActivity() {
             binding.empresa.text =  user.get(CAMPO_EMPRESA).toString()
             binding.puesto.text =  user.get(CAMPO_PUESTO).toString()
             binding.idEmpleado.text = user.id*/
+
+            /*
+            binding.btnModificar.setOnClickListener{
+                showModificar(user.id)
+            }
+            */
+
         }
 
+
+
     }
+
+    /*
+    private fun showModificar(id: String){
+
+        val ModificarIntent = Intent(this, ActivityModificar::class.java).apply {
+            putExtra("id",id)
+        }
+        startActivity(ModificarIntent)
+
+
+    }
+    */
+
 }

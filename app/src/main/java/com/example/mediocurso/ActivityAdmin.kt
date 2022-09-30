@@ -34,7 +34,7 @@ class ActivityAdmin : AppCompatActivity() {
 
             binding.tvName.setText(getString(R.string.Nombre_empleado, user.get(ActivityEmpleado.CAMPO_NOMBRE).toString()))
             binding.correoTv.setText(getString(R.string.correo_empleado, user.get(ActivityEmpleado.CAMPO_CORREO).toString()))
-            binding.telefono.setText(getString(R.string.correo_empleado, user.get(ActivityEmpleado.CAMPO_TELEFONO).toString()))
+            binding.telefono.setText(getString(R.string.Telefono_empleado, user.get(ActivityEmpleado.CAMPO_TELEFONO).toString()))
             binding.empresa.setText(getString(R.string.empresa_empleado, user.get(ActivityEmpleado.CAMPO_EMPRESA).toString()))
             binding.idEmpleado.setText(getString(R.string.Id_admin, user.id))
             binding.puesto.setText(getString(R.string.Puesto_empleado, user.get(ActivityEmpleado.CAMPO_PUESTO).toString()))
