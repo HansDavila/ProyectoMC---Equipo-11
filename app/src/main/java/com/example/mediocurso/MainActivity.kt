@@ -1,5 +1,6 @@
 package com.example.mediocurso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mediocurso.databinding.ActivityMainBinding
@@ -12,5 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnRegistrar.setOnClickListener{
+            val intentRegisterActivity = Intent(this, RegisterActivity::class.java)
+            startActivity(intentRegisterActivity)
+
+        }
     }
 }
