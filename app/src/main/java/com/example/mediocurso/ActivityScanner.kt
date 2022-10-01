@@ -1,5 +1,6 @@
 package com.example.mediocurso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mediocurso.databinding.ActivityScannerBinding
@@ -26,6 +27,11 @@ class ActivityScanner : AppCompatActivity() {
 
         binding = ActivityScannerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.qrImage.setOnClickListener{
+            val RegisterIntent = Intent(this, RegistroActivity::class.java)
+            startActivity(RegisterIntent)
+        }
 
 
     }

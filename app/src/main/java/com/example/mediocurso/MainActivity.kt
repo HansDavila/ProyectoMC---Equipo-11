@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 val EmpleadoIntent = Intent(this, ActivityEmpleado::class.java).apply {
                     putExtra(RegisterActivity.CAMPO_CORREO,email)
                 }
-                var toast = Toast.makeText(this, "ENTRADA DESDE DENTRO CON PUESTO: $puesto", Toast.LENGTH_SHORT).show()
+                //var toast = Toast.makeText(this, "ENTRADA DESDE DENTRO CON PUESTO: $puesto", Toast.LENGTH_SHORT).show()
                 startActivity(EmpleadoIntent)
 
             }else if(puesto.equals("admin")){
