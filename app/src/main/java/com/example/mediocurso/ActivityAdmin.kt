@@ -1,5 +1,6 @@
 package com.example.mediocurso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mediocurso.databinding.ActivityAdminBinding
@@ -39,6 +40,11 @@ class ActivityAdmin : AppCompatActivity() {
             binding.idEmpleado.setText(getString(R.string.Id_admin, user.id))
             binding.puesto.setText(getString(R.string.Puesto_empleado, user.get(ActivityEmpleado.CAMPO_PUESTO).toString()))
 
+            binding.btnCodigo.setOnClickListener{
+                showScanner(user.id)
+            }
+
+
 
             /*
             binding.correoTv.text =  user.get(CAMPO_CORREO).toString()
@@ -47,5 +53,15 @@ class ActivityAdmin : AppCompatActivity() {
             binding.puesto.text =  user.get(CAMPO_PUESTO).toString()
             binding.idEmpleado.text = user.id*/
         }
+    }
+
+    private fun showScanner(id: String){
+        val ScannerIntent = Intent(this, ActivityScanner::class.java).apply {
+            putExtra("id", id)
+
+        }
+
+        startActivity(ScannerIntent)
+
     }
 }

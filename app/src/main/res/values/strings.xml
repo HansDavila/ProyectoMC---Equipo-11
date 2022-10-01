@@ -30,6 +30,8 @@
 
     <string name="modificaText">Modifica tus datos</string>
     <string name="QRtext">CODIGO QR</string>
+    <string name="scannerText">ESCANEAR CODIGO QR</string>
+    <string name="timeText">8:30 a.m 30/08/22</string>
 
 
 </resources>

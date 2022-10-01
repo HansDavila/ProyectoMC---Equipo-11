@@ -58,6 +58,10 @@ class ActivityEmpleado : AppCompatActivity() {
             binding.puesto.text =  user.get(CAMPO_PUESTO).toString()
             binding.idEmpleado.text = user.id*/
 
+            binding.btnCodigo.setOnClickListener{
+                showCodigoQr(user.id)
+            }
+
             /*
             binding.btnModificar.setOnClickListener{
                 showModificar(user.id)
@@ -67,6 +71,16 @@ class ActivityEmpleado : AppCompatActivity() {
         }
 
 
+
+    }
+
+    private fun showCodigoQr(id: String){
+        val QrIntent = Intent(this, QrActivity::class.java).apply {
+            putExtra("id", id)
+
+        }
+
+        startActivity(QrIntent)
 
     }
 
